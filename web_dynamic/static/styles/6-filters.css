@@ -74,6 +74,15 @@ section.filters.popover li h2 {
     margin: 0;
 }
 
+div.amenities ul li input {
+  margin-right: 10px;
+  
+}
+
+div.amenities ul {
+  padding-left: 1px;
+}
+
 li {
     list-style-type: none;
     padding-bottom: 5%;

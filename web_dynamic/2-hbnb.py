@@ -12,7 +12,7 @@ from uuid import uuid4
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 
-@app.route("/0-hbnb", strict_slashes=False)
+@app.route("/2-hbnb", strict_slashes=False)
 def states(state_id=None):
     """display a HTML page with the list of all
     State objects present in DBStorage sorted by name (A->Z)"""
@@ -23,7 +23,7 @@ def states(state_id=None):
     places = storage.all(Place).values()
     cache_id = str(uuid4())
     return render_template(
-        "0-hbnb.html", states=states, amenities=amenities, places=places,
+        "2-hbnb.html", states=states, amenities=amenities, places=places,
         cache_id=cache_id)
 
 
