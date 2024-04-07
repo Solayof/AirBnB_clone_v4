@@ -3,7 +3,7 @@ $(function() {
         url : "http://0.0.0.0:5001/api/v1/places_search",
         method : "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: "{}"
     }
@@ -19,7 +19,7 @@ $(function() {
     seachplaces = (places) => {
         $("div.head_title h1").text("Places");
         $.each(places, (idx, place) => {
-            article = $("<article></article").html(`<div class="price_title">
+            article = $("<article></article>").html(`<div class="price_title">
             <div class="article_head">
                 <h2>${place.name}</h2>
             </div>
