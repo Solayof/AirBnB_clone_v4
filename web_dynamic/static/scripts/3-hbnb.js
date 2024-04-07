@@ -12,7 +12,7 @@ $(function() {
     .done((places) => {
         seachplaces(places);
     })
-    .fail((jqXHR, testStatus, errorThrown) {
+    .fail((jqXHR, testStatus, errorThrown) => {
         console.log('Error:', errorThrown);
     });
 
