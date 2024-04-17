@@ -1,5 +1,5 @@
 $(function() {
-  $.get('http://0.0.0.0:5001/api/v1/status/', (resp, status) => {
+  $.get('http://0.0.0.0:5002/api/v1/status/', (resp, status) => {
     if (status === "success") {
       $("div#api_status").addClass("available");
       // $("div#api_status").html(`<h1>${Object.values(resp)}</h1>`);
