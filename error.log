@@ -1,0 +1,14 @@
+[2024-04-18 07:28:00 +0000] [40283] [INFO] Starting gunicorn 21.2.0
+[2024-04-18 07:28:00 +0000] [40283] [INFO] Listening at: http://0.0.0.0:5000 (40283)
+[2024-04-18 07:28:00 +0000] [40283] [INFO] Using worker: sync
+[2024-04-18 07:28:00 +0000] [40285] [INFO] Booting worker with pid: 40285
+[2024-04-18 07:30:21 +0000] [40283] [INFO] Handling signal: int
+[2024-04-18 07:30:21 +0000] [40285] [INFO] Worker exiting (pid: 40285)
+[2024-04-18 07:30:21 +0000] [40283] [INFO] Shutting down: Master
+[2024-04-18 07:30:50 +0000] [40293] [INFO] Starting gunicorn 21.2.0
+[2024-04-18 07:30:50 +0000] [40293] [INFO] Listening at: http://0.0.0.0:5000 (40293)
+[2024-04-18 07:30:50 +0000] [40293] [INFO] Using worker: sync
+[2024-04-18 07:30:50 +0000] [40295] [INFO] Booting worker with pid: 40295
+[2024-04-18 07:38:12 +0000] [40293] [INFO] Handling signal: int
+[2024-04-18 07:38:12 +0000] [40295] [INFO] Worker exiting (pid: 40295)
+[2024-04-18 07:38:12 +0000] [40293] [INFO] Shutting down: Master
