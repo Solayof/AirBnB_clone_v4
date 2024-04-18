@@ -1,47 +1,31 @@
-$(document).ready(() => {
-  const amenities = {};
-
-  $(".amenities .popover ul li input[type='checkbox']").each(function () {
-    $(this).on('click change', function () {
-      const id = $(this).attr('data-id');
-      const name = $(this).attr('data-name');
-
-      if ($(this).prop('checked')) {
-        if (!(id in amenities)) {
-          amenities[id] = name;
-        }
-      } else {
-        delete amenities[id];
-      }
-
-      appendName();
-    });
-  });
-
-  function appendName () {
-    const keys = Object.keys(amenities);
-
-    $('.amenities h4').empty();
-
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      let value = amenities[key];
-
-      if (i < keys.length - 1) {
-        value += ', ';
-      }
-      $('.amenities h4').append(value);
-    }
-  }
-
-  $.get('http://solayof.tech/api/v1/status/').done(function (response, statusText, xhr) {
-    if (xhr.status === 200) {
-      $('div#api_status').addClass('available');
+$(function() {
+  const checked = {};
+  $('input[type="checkbox"]').change(function() {
+    const amenitId = $(this).attr('data-id');
+    const amenityName = $(this).attr('data-name');
+    console.log($(this));
+    if ($(this).is(':checked')) {
+      checked[amenitId] = amenityName;
+      //console.log(amenityName);
     } else {
-      $('div#api_status').removeClass('available');
+      delete checked[amenitId];
     }
-  })
-    .fail(() => {
-      $('div#api_status').removeClass('available');
+    if($.isEmptyObject(checked)) {
+      $("div.amenities h4").html("&nbsp;");
+    } else {
+      const amenities = Object.values(checked);
+     // console.log(amenities);
+      $("div.amenities h4").text(amenities.join(", "));
+    }
+  });
+  $.get('http://0.0.0.0:5002/api/v1/status/', (resp, status) => {
+    console.log("here am i");
+    if (status === "success") {
+      $("div#api_status").addClass("available");
+      // $("div#api_status").html(`<h1>${Object.values(resp)}</h1>`);
+      // console.log(resp);
+    } else {
+      $("div#api_status").removeClass("available");
+    }
     });
 });
